@@ -1,5 +1,5 @@
 {
-    "name": "xero-api/xero-oauth",
+    "name": "vegasje/xero-oauth",
     "description": "PHP class for the Xero API V2 http://developer.xero.com/getting-started/code/php/",
     "keywords": ["xero", "oauth", "xerooauth"],
     "license": "MIT",
