@@ -1,4 +1,5 @@
-<?php
+<?php namespace XeroAPI\XeroOAuth;
+
 /* OAuthSimple
   * A simpler version of OAuth
   *
