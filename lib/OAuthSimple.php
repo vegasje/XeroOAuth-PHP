@@ -37,7 +37,7 @@
 
 /** Define a custom Exception for easy trap and detection
 */
-class OAuthSimpleException extends Exception {}
+class OAuthSimpleException extends \Exception {}
 
 
 class OAuthSimple {

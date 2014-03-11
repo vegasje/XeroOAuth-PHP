@@ -3,7 +3,7 @@
 /**
  * Define a custom Exception for easy trap and detection
  */
-class XeroOAuthException extends Exception {
+class XeroOAuthException extends \Exception {
 }
 class XeroOAuth {
 	var $_xero_defaults;
