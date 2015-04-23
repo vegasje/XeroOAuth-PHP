@@ -8,18 +8,17 @@ Intro
 XeroOAuth-PHP is a sample library for use with the Xero API (<http://developer.xero.com>). The Xero API uses OAuth 1.0a, but we would not recommend using this library for other OAuth 1.0a APIs as
 the Xero API has one of the more advanced implementations (RSA-SHA1, client ssl certs etc) and thus has many configuration options not typically used in other APIs.
 
-This library is designed to get a developer up and running quickly with the OAuth authentication layer, but there will be some customisation of its implementation required before it can be used in a
-production environment.
+This library is designed to get a developer up and running quickly with the OAuth authentication layer, but there will be some customisation of its implementation required before it can be used in a production environment.
 
 ## Requirements
 * PHP 5+
-* php\_curl extension
+* php\_curl extension - ensure a recent version (7.30+)
 * php\_openssl extension
 
 
 ## Setup
-To get setup, you will need to modify the values in the \_config.php file to your own requirements and application settings.
-_Special options for Partner applications_ should be commented out for non-partner applications.
+To get setup, you will need to modify the values in the \_config.php file to your own requirements and application settings or see the customised example file for each different application type, public.php, private.php or partner.php.
+_Special options for Partner applications_ should be commented out for non-partner applications if using the \_config.php file.
 
 ## Usage
 
@@ -105,8 +104,9 @@ Understanding the type of message you are getting from the API could be useful. 
 
 ## TODO
 
-1. Reading a value from a report
-2. Better WHERE and ORDER examples
+- [ ] Reading a value from a report
+- [x] Better WHERE and ORDER examples
+- [ ] Merge OAuthsimple changes for RSA-SHA1 back to parent repo
 
 
 ## License & Credits
@@ -120,6 +120,21 @@ OAuthsimple.php contains minor adaptations from the OAuthSimple PHP class by [Un
 XeroOAuth class is based on code and structure derived from the [tmhOAuth](https://github.com/themattharris/tmhOAuth) library.
 
 ## Major change history
+
+#### 0.6 - 19th April 2015
+
+Added composer support.
+Modified content-type so is also set for PUT requests
+
+#### 0.5 - 16th November 2014
+
+Added examples for CRU of tracking categories and options.
+Updated the CA certs to a recent one - warning that if you are using a very old version of curl you may get 'cert invalid' type error.
+Removed an unused function and tidied up comments on another to make them more sensible.
+
+#### 0.4 - 29th September 2014
+
+Merged some pull requests, addressed an issue with multiple calls having signature validation issues.
 
 #### 0.3 - 3rd January 2014
 

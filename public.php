@@ -4,7 +4,7 @@ require 'lib/XeroOAuth.php';
 /**
  * Define for file includes
  */
-define ( 'BASE_PATH', '.' );
+define ( 'BASE_PATH', dirname(__FILE__) );
 
 /**
  * Define which app type you are using:
@@ -43,7 +43,8 @@ $signatures = array (
 		'shared_secret' => 'YOURSECRET',
 		// API versions
 		'core_version' => '2.0',
-		'payroll_version' => '1.0' 
+		'payroll_version' => '1.0',
+		'file_version' => '1.0' 
 );
 
 if (XRO_APP_TYPE == "Private" || XRO_APP_TYPE == "Partner") {
@@ -109,7 +110,7 @@ if ($checkErrors > 0) {
 			$scope = "";
 			// $scope = 'payroll.payrollcalendars,payroll.superfunds,payroll.payruns,payroll.payslip,payroll.employees,payroll.TaxDeclaration';
 			if ($_REQUEST ['authenticate'] > 1)
-				$scope = 'payroll.employees,payroll.payruns';
+				$scope = 'payroll.employees,payroll.payruns,payroll.timesheets';
 			
 			print_r ( $XeroOAuth->extract_params ( $XeroOAuth->response ['response'] ) );
 			$_SESSION ['oauth'] = $XeroOAuth->extract_params ( $XeroOAuth->response ['response'] );
